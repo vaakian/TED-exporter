@@ -2,8 +2,11 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { matchID } from '../composable';
+import Note from './Note.vue';
+import TestCases from './TestCases.vue';
 
-const id = ref('reshma_saujani_teach_girls_bravery_not_perfection');
+// reshma_saujani_teach_girls_bravery_not_perfection
+const id = ref('');
 const router = useRouter();
 const go = () => {
   let destination = id.value;
@@ -17,9 +20,13 @@ const go = () => {
 
 <template>
   <div class="form">
-    <h1>TED-Exporter</h1>
-    <input type="text" v-model="id" />
-    <button @click="go">Load</button>
+    <h1 fw-bold text-red>Bilingual TED-Talk</h1>
+    <input type="text" placeholder="在此处粘贴Ted Talk的网址" v-model="id" />
+    <button @click="go" class="btn shadow bg-blue color-white">Load</button>
+  </div>
+  <div text-center>
+    <TestCases />
+    <Note />
   </div>
 </template>
 
@@ -29,13 +36,11 @@ const go = () => {
   text-align: center;
   display: block;
 }
-.form > h1 {
-  color: red;
-  font-family: Arial, Helvetica, sans-serif;
-}
+
 .form > input {
   padding: 10px;
-  background: #eee;
+  background: #f9fffe;
+  color: #666;
   outline: 1px solid #a3bcce;
   border: none;
   border-radius: 2px;
@@ -43,8 +48,8 @@ const go = () => {
   width: 80%;
   margin-block: 15px;
 }
-.form > button {
+/* .form > button {
   padding: 10px 20px;
   font-size: 24px;
-}
+} */
 </style>

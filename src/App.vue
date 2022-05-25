@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import './App.css';
+</script>
 
 <template>
   <router-view />
@@ -11,7 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 20px;
-  width: 768px;
   margin-inline: auto;
 }
 * {
