@@ -1,6 +1,8 @@
 # Ted-talk Exporter
 
-> `Ted-talk Exporter` enables you automatically to export TED talks from `url` to a readable bilingual format.
+> `Ted-talk Exporter` enables you to automatically export TED talks from `url` to a readable bilingual format.
+
+> application deployed on Vercel, Live Demo: [https://tedtalk.vercel.app/](https://tedtalk.vercel.app/)
 
 ![](./src/assets/prev1.png)
 

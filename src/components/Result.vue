@@ -62,6 +62,7 @@ onActivated(() => {
 });
 onDeactivated(() => {
   talk.value = null;
+  document.title = 'Bilingual TED-Talk';
 });
 </script>
 

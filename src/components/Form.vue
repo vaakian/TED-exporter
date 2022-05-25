@@ -16,11 +16,6 @@ const go = () => {
   }
   if (destination) router.push('/result/' + destination);
 };
-
-onActivated(() => {
-  // reset title
-  document.title = 'Bilingual TED-Talk';
-});
 </script>
 
 <template>

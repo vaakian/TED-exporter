@@ -18,6 +18,9 @@
       4) 点击<span text-cyan>「作者：xxxx」</span
       >可以调出打印选项，方便导出为pdf。
     </p>
+    <p mb-2>
+      5) 在结果页面点击<span text-red fw-bold>TED</span>可以🔙返回首页。
+    </p>
   </div>
   <div text-center>
     <h1>⬇️效果图⬇️</h1>
