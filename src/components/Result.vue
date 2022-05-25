@@ -26,6 +26,7 @@ const goBack = () => {
 // note colors
 const { switchColor: switchNoteColor, currentColor: noteColor } = useColors([
   '#f6f6f6',
+  '#e8f4f9',
   'aliceblue',
   'transparent',
 ]);
@@ -68,7 +69,7 @@ onMounted(requestTalk);
           :href="'https://www.ted.com/talks/' + talk.id"
           target="_blank"
           class="title"
-          >{{ talk.title }}</a
+          >{{ talk.title.trim() }}</a
         >
       </p>
       <p>
@@ -130,7 +131,7 @@ a {
   color: #555;
 }
 .title {
-  font-family: '黑体';
+  font-family: 'Arial';
   font-weight: bolder;
 }
 .content {
