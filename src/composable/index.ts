@@ -1,5 +1,6 @@
 // https://www.ted.com/talks/reshma_saujani_teach_girls_bravery_not_perfection
 
+import { useStorage } from '@vueuse/core';
 import { computed, ref } from 'vue';
 
 // https://www.ted.com/talks/reshma_saujani_teach_girls_bravery_not_perfection/translation
