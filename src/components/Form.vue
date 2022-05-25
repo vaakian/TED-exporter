@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onActivated, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { matchID } from '../composable';
 import Note from './Note.vue';
@@ -16,6 +16,11 @@ const go = () => {
   }
   if (destination) router.push('/result/' + destination);
 };
+
+onActivated(() => {
+  // reset title
+  document.title = 'Bilingual TED-Talk';
+});
 </script>
 
 <template>

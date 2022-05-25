@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { onActivated, onDeactivated, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useColors } from '../composable';
 
@@ -35,6 +35,10 @@ const router = useRouter();
 const goBack = () => {
   router.push('/');
 };
+
+const printPage = () => {
+  window.print();
+};
 // note colors
 const { switchColor: switchNoteColor, currentColor: noteColor } = useColors([
   '#f6f6f6',
@@ -53,7 +57,12 @@ watch(talk, () => {
     document.title = `${talk.value.title} - ${talk.value.author}`;
   }
 });
-onMounted(requestTalk);
+onActivated(() => {
+  requestTalk();
+});
+onDeactivated(() => {
+  talk.value = null;
+});
 </script>
 
 <template>
@@ -97,7 +106,9 @@ onMounted(requestTalk);
             v-html="talk.title.trim()"
           ></a>
         </p>
-        <p>作者：<span class="author" v-html="talk.author"></span></p>
+        <p @click="printPage">
+          作者：<span class="author" v-html="talk.author"></span>
+        </p>
       </div>
       <div class="result">
         <!-- left side -->
