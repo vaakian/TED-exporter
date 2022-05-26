@@ -6,5 +6,5 @@
       "dest": "https://tedtalk.vercel.app/api/$1"
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "./dist/index.html" }]
 }
