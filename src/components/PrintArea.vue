@@ -118,11 +118,10 @@ a {
 .content {
   border-right: 3px solid #e6e6e6;
   font-size: 20px;
-  font-family: Georgia, 'SongTi SC' /* , 'Noto Serif SC' */;
+  /* font-family: Georgia, 'SongTi SC', 'Noto Serif SC'; */
   padding-right: 20px;
   width: 70%;
   line-height: 1.3em;
-
   text-align: justify;
 }
 .note {
