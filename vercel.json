@@ -2,8 +2,8 @@
   "version": 2,
   "routes": [
     {
-      "src": "/api",
-      "dest": "https://tedtalk.vercel.app/api"
+      "src": "/api/(.*)",
+      "dest": "https://tedtalk.vercel.app/api/$1"
     }
   ]
 }
