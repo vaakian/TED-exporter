@@ -182,10 +182,15 @@ a {
   padding-right: 20px;
   width: 70%;
   line-height: 1.3em;
+
+  text-align: justify;
 }
 .note {
   flex: 1;
   background-color: v-bind(noteColor);
+}
+.paragraph p:first-child {
+  padding-left: 4px;
 }
 .paragraph p:nth-child(2) {
   /* color: #00086d; */
@@ -193,8 +198,7 @@ a {
   margin-bottom: 16px;
   border-radius: 5px;
   background-color: v-bind(transcriptColor);
-  padding-left: 5px;
-  margin-left: -5px;
+  padding-inline: 5px;
 }
 
 @keyframes rotating {
