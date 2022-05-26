@@ -1,3 +1,0 @@
-[submodule "ted-server"]
-	path = ted-server
-	url = https://github.com/vaakian/ted-server.git
