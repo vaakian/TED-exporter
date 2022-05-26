@@ -1,5 +1,12 @@
 <script setup lang="ts">
+import { provide } from 'vue';
+import { useRouter } from 'vue-router';
 import './App.css';
+const router = useRouter();
+const goHome = () => {
+  router.push('/');
+};
+provide('goHome', goHome);
 </script>
 
 <template>

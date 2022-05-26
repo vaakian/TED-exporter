@@ -2,6 +2,7 @@
 
 import { useStorage } from '@vueuse/core';
 import { computed, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 // https://www.ted.com/talks/reshma_saujani_teach_girls_bravery_not_perfection/translation
 export const matchID = (url: string) => {
@@ -22,4 +23,8 @@ export const useColors = (colors: string[]) => {
     currentColor,
     switchColor,
   };
+};
+
+export const printCurrentPage = () => {
+  window.print();
 };
