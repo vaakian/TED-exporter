@@ -1,19 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "./ted-server/index.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/api",
-      "dest": "./ted-server/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
+      "dest": "https://tedtalk.vercel.app/api"
     }
   ]
 }
