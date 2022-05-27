@@ -31,11 +31,11 @@ const currentFont = computed(() => {
 <template>
   <div
     id="tools"
-    class="flex left-50% translate-x-[-50%] justify-center bg-blue p-4 gap-2 z-999 fixed bottom-4"
+    class="flex left-50% translate-x-[-50%] shadow-2xl justify-center bg-indigo-100 p-4 gap-2 z-999 fixed bottom-4"
     border="1 cyan rounded-2"
   >
-    <button @click="goHome" class="text-4 p-2">返回</button>
-    <button @click="printCurrentPage" class="text-4 p-2">打印</button>
+    <button @click="goHome" class="text-4 py-1 px-4">返回</button>
+    <button @click="printCurrentPage" class="text-4 py-1 px-4">打印</button>
   </div>
 </template>
 
