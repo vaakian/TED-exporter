@@ -6,8 +6,8 @@ const goHome = inject('goHome') as Provided['goHome'];
 // TODO: cache the setting options to localStorage
 
 // line-height
-const CN_lineHeight = useLocalStorage('CN_lineHeight', 1.9);
-const EN_lineHeight = useLocalStorage('EN_lineHeight', 1.9);
+const CN_lineHeight = useLocalStorage('CN_lineHeight', 1.5);
+const EN_lineHeight = useLocalStorage('EN_lineHeight', 1.3);
 
 // font
 const fontList = {
@@ -55,7 +55,7 @@ const handleEnglishChange = (event: Event) => {
     <div class="flex flex-col gap-2">
       <span>行高[EN]:</span>
       <input
-        v-model="CN_lineHeight"
+        v-model="EN_lineHeight"
         type="range"
         max="3"
         min="0.8"
@@ -63,7 +63,7 @@ const handleEnglishChange = (event: Event) => {
       />
       <span>行高[CN]:</span>
       <input
-        v-model="EN_lineHeight"
+        v-model="CN_lineHeight"
         type="range"
         max="3"
         min="0.8"
