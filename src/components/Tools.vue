@@ -4,44 +4,40 @@ import { computed, inject, reactive, ref } from 'vue';
 import { printCurrentPage } from '../composable';
 const goHome = inject('goHome') as Provided['goHome'];
 // TODO: cache the setting options to localStorage
-
 // line-height
 const CN_lineHeight = useLocalStorage('CN_lineHeight', 1.5);
 const EN_lineHeight = useLocalStorage('EN_lineHeight', 1.3);
 
 // font
+const currentFontIndex = useLocalStorage('fontIndex', [0, 0]);
 const fontList = {
-  chinese: [
+  cn: [
     ['宋体', 'SongTi SC, Noto Serif SC'],
     ['黑体', 'SimHei, Noto Sans SC'],
     ['系统默认', ''],
   ],
-  english: [
+  en: [
     ['Georgia', 'Georgia'],
     ['Arial', 'Arial'],
     ['Poppins', 'Poppins'],
   ],
 };
-const currentFontIndex = [
-  useLocalStorage('CN_fontIndex', 0),
-  useLocalStorage('EN_fontIndex', 0),
-];
 const currentFont = computed(() => {
-  const [cn, en] = currentFontIndex;
+  const [cnIndex, enIndex] = currentFontIndex.value;
   return [
-    ...fontList.english[en.value][1].split(','),
-    ...fontList.chinese[cn.value][1].split(','),
+    ...fontList.en[enIndex][1].split(','),
+    ...fontList.cn[cnIndex][1].split(','),
   ]
     .filter((s) => s)
     .join(',');
 });
 const handleChineseChange = (event: Event) => {
-  currentFontIndex[0].value = (
+  currentFontIndex.value[0] = (
     event.target! as HTMLSelectElement
   ).selectedIndex;
 };
 const handleEnglishChange = (event: Event) => {
-  currentFontIndex[1].value = (
+  currentFontIndex.value[1] = (
     event.target! as HTMLSelectElement
   ).selectedIndex;
 };
@@ -53,7 +49,7 @@ const handleEnglishChange = (event: Event) => {
     border="1 cyan rounded-2"
   >
     <div class="flex flex-col gap-2">
-      <span>行高[EN]:</span>
+      <span>行高[EN][{{ EN_lineHeight }}]:</span>
       <input
         v-model="EN_lineHeight"
         type="range"
@@ -61,7 +57,7 @@ const handleEnglishChange = (event: Event) => {
         min="0.8"
         step="0.1"
       />
-      <span>行高[CN]:</span>
+      <span>行高[CN][{{ CN_lineHeight }}]:</span>
       <input
         v-model="CN_lineHeight"
         type="range"
@@ -74,20 +70,20 @@ const handleEnglishChange = (event: Event) => {
     <div class="flex gap-2">
       <select @change="handleChineseChange" name="font">
         <option
-          v-for="([font, value], index) in fontList.chinese"
+          v-for="([font, value], index) in fontList.cn"
           :value="value"
           :key="value"
-          :selected="index === currentFontIndex[0].value"
+          :selected="index === currentFontIndex[0]"
         >
           {{ font }}
         </option>
       </select>
       <select @change="handleEnglishChange" name="font">
         <option
-          v-for="([font, value], index) in fontList.english"
+          v-for="([font, value], index) in fontList.en"
           :value="value"
           :key="value"
-          :selected="index === currentFontIndex[1].value"
+          :selected="index === currentFontIndex[1]"
         >
           {{ font }}
         </option>
