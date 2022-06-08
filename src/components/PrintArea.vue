@@ -80,6 +80,7 @@ const goHome = inject('goHome') as Provided['goHome'];
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */

@@ -14,7 +14,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:88/',
+        target: 'https://tedtalk.vercel.app/',
         changeOrigin: true,
       },
     },

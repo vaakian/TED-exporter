@@ -53,8 +53,9 @@ onDeactivated(() => {
       </button>
     </div>
     <div class="w-768px mx-auto" v-else>
-      <Tools />
-      <PrintArea :talk="talk" />
+      <Tools>
+        <PrintArea :talk="talk" />
+      </Tools>
     </div>
   </div>
   <div text-center v-else>
